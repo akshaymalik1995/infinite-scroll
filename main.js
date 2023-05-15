@@ -48,17 +48,24 @@ function handleScroll() {
     }, 10);
 }
 
+let count = 3
+
 // Create a function appendElement
 function appendElement() {
     // Create a new element div
     const div = document.createElement('div');
-    div.innerHTML = `<div class="item w-screen h-screen"></div>`;
+    div.innerHTML = `
+    <div class="item w-screen flex justify-center items-center h-screen">
+        <div class="text-6xl font-bold">${count}</div>
+    </div>
+    `;
     // Select a random color from the colors array
     const randomColor = [...colors][Math.floor(Math.random() * colors.size)];
     // Add the random color to the div
     div.classList.add(randomColor);
     // Append the div to the body
     body.appendChild(div);
+    count++
 }
 
 // Add a scroll event listener to the window
